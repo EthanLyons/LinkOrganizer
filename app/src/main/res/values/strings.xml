@@ -6,4 +6,7 @@
   <string name="nav_header_subtitle">android.studio@android.com</string>
   <string name="nav_header_desc">Navigation header</string>
   <string name="action_settings">Settings</string>
+  <string name="list_text">Select a List</string>
+  <string name="delete_list">Delete A List</string>
+  <string name="exit_string">Exit</string>
 </resources>
