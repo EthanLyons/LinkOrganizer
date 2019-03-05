@@ -13,6 +13,7 @@ import java.util.List;
   public interface UserDao {
 
     @Insert
+    List<Long> insert(User... users);
 
 
 
@@ -24,8 +25,6 @@ import java.util.List;
 
     @Delete
     int delete(User... users);
-
-  }
 
 
 }

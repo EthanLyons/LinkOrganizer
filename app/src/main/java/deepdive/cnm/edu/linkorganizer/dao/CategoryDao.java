@@ -7,6 +7,7 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
+import deepdive.cnm.edu.linkorganizer.entity.Category;
 import deepdive.cnm.edu.linkorganizer.entity.Link;
 import java.util.List;
 
@@ -14,16 +15,16 @@ import java.util.List;
 public interface CategoryDao {
 
   @Insert
-  List<Link> insert(CategoryDao... categoryDaos);
+  List<Long> insert(Category... categories);
 
-  @Query
-  CategoryDao getCategoryDao(Long category_id);
+  @Query("SELECT * FROM Category WHERE category_id = :category_id")
+  Category getCategoryDao(Long category_id);
 
   @Update
-  List<CategoryDao> findAll();
+  int update(Category... categories);
 
   @Delete
-  int delete(CategoryDao... categoryDaos);
+  int delete(Category... categories);
 
 
 

@@ -15,9 +15,9 @@ import java.util.List;
 public interface LinkCategoryDao {
 
   @Insert
-
-  @Query
-  LinkCategoryDao getLinkCategoryDao(Long);
+  List<Long> insert(LinkCategory... linkCategories);
+  @Query("SELECT * FROM LinkCategory WHERE category_id = :category_id AND link_id = :link_id")
+  LinkCategoryDao getLinkCategoryDao(Long category_id, Long link_id);
 
   @Update
   List<LinkCategory> findAll();
