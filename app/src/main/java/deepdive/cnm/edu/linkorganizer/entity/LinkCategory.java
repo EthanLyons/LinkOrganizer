@@ -11,9 +11,7 @@ import android.arch.persistence.room.PrimaryKey;
         @ForeignKey(entity = Link.class, parentColumns = "link_id", childColumns = "link_id", onDelete = ForeignKey.CASCADE),
         @ForeignKey(entity = Category.class, parentColumns = "category_id", childColumns = "category_id", onDelete = ForeignKey.CASCADE)
     },
-    indices = {
-        @Index(value = {"link_id","category_id"}, unique = true) // enables unique variables
-    }
+    primaryKeys = {"link_id","category_id"}
 )
 
 public class LinkCategory {

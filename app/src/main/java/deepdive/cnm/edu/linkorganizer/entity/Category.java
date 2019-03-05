@@ -10,14 +10,14 @@ public class Category {
 
   @ColumnInfo(name = "category_id")
   @PrimaryKey(autoGenerate = true)
-  private long Id;
+  private long id;
   private String name;
 
 
-  public long getCategory_id() { return Id;}
+  public long getCategory_id() { return id;}
 
   public long getId() {
-    return Id;
+    return id;
   }
 
   public String getName() {
@@ -29,7 +29,7 @@ public class Category {
   }
 
   public void setId(long id) {
-    this.Id = Id;
+    this.id = this.id;
   }
 
 }
