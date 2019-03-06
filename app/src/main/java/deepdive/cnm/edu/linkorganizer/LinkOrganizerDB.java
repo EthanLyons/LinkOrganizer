@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.nasaapod.model;
+package deepdive.cnm.edu.linkorganizer;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
@@ -6,14 +6,17 @@ import android.arch.persistence.room.RoomDatabase;
 import android.arch.persistence.room.TypeConverter;
 import android.arch.persistence.room.TypeConverters;
 import android.support.annotation.Nullable;
-import edu.cnm.deepdive.nasaapod.ApodApplication;
-import edu.cnm.deepdive.nasaapod.model.ApodDB.Converters;
-import edu.cnm.deepdive.nasaapod.model.dao.AccessDao;
-import edu.cnm.deepdive.nasaapod.model.dao.ApodDao;
-import edu.cnm.deepdive.nasaapod.model.entity.Access;
-import edu.cnm.deepdive.nasaapod.model.entity.Apod;
-import edu.cnm.deepdive.util.Date;
+import deepdive.cnm.edu.linkorganizer.dao.LinkDao;
+import deepdive.cnm.edu.linkorganizer.dao.UserDao;
+import deepdive.cnm.edu.linkorganizer.entity.Category;
+import deepdive.cnm.edu.linkorganizer.entity.Link;
+import deepdive.cnm.edu.linkorganizer.entity.LinkCategory;
+import deepdive.cnm.edu.linkorganizer.entity.User;
+import deepdive.cnm.edu.linkorganizer.LinkOrganizerDB.Converters;
+import deepdive.cnm.edu.linkorganizer.dao.CategoryDao;
+import deepdive.cnm.edu.linkorganizer.dao.LinkCategoryDao;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Defines the local database as a collection of its entities and converters, with the singleton
@@ -21,37 +24,31 @@ import java.util.Calendar;
  * data access objects (DAOs) for the database entities.
  */
 @Database(
-    entities = {Apod.class, Access.class},
+    entities = {LinkCategory.class, Category.class, User.class, Link.class},
     version = 1,
     exportSchema = true
 )
 @TypeConverters(Converters.class)
-public abstract class ApodDB extends RoomDatabase {
+public abstract class LinkOrganizerDB extends RoomDatabase {
 
-  private static final String DB_NAME = "apod_db";
+  private static final String DB_NAME = "LinkOrganizerDB_db";
 
-  /**
-   * Returns the single instance of {@link ApodDB} for the current application context.
-   *
-   * @return single {@link ApodDB} instance reference.
-   */
-  public synchronized static ApodDB getInstance() {
+  public synchronized static LinkOrganizerDB getInstance() {
     return InstanceHolder.INSTANCE;
   }
 
-  /**
-   * Returns an instance of a Room-generated implementation of {@link ApodDao}.
-   *
-   * @return data access object for CRUD operations involving {@link Apod} instances.
-   */
-  public abstract ApodDao getApodDao();
+  public abstract CategoryDao getCategoryDao();
 
-  public abstract AccessDao getAccessDao();
+  public abstract LinkCategoryDao getLinkCategoryDao();
+
+  public abstract LinkDao getLinkDao();
+
+  public abstract UserDao getUserDao();
 
   private static class InstanceHolder {
 
-    private static final ApodDB INSTANCE = Room.databaseBuilder(
-        ApodApplication.getInstance().getApplicationContext(), ApodDB.class, DB_NAME)
+    private static final LinkOrganizerDB INSTANCE = Room.databaseBuilder(
+        LinkOrganizerApplication.getInstance().getApplicationContext(), LinkOrganizerDB.class, DB_NAME)
         .build();
 
   }
@@ -62,14 +59,6 @@ public abstract class ApodDB extends RoomDatabase {
    */
   public static class Converters {
 
-    /**
-     * Converts a {@link Long} value containing the number of milliseconds since the start of the
-     * Unix epoch (1970-01-01 00:00:00.000 UTC) to an instance of {@link Calendar}, and returns the
-     * latter.
-     *
-     * @param milliseconds date-time as a number of milliseconds since the start of the Unix epoch.
-     * @return date-time as a {@link Calendar} instance.
-     */
     @Nullable
     @TypeConverter
     public static Calendar calendarFromLong(@Nullable Long milliseconds) {
@@ -93,35 +82,34 @@ public abstract class ApodDB extends RoomDatabase {
     public static Long longFromCalendar(@Nullable Calendar calendar) {
       return (calendar != null) ? calendar.getTimeInMillis() : null;
     }
-
-    /**
-     * Converts an {@link Integer} value containing the days since the start of the Unix epoch
-     * (1970-01-01) to an instance of {@link Date}, and returns the latter. Both of these are
-     * interpreted as local dates, with no reference to time zone.
-     *
-     * @param days local date as a number of days since the start of the Unix epoch.
-     * @return local date as a {@link Date} instance.
-     */
-    @Nullable
-    @TypeConverter
-    public static Date dateFromInt(@Nullable Integer days) {
-      return (days != null) ? Date.fromEpochDays(days) : null;
-    }
-
-    /**
-     * Converts a {@link Date} local date value to a number of days since the start of the Unix
-     * epoch (1970-01-01), and returns the latter. Both of these are interpreted as local dates,
-     * with no reference to time zone.
-     *
-     * @param date local date as a {@link Date} instance.
-     * @return local date as a number of days since the start of the Unix epoch.
-     */
-    @Nullable
-    @TypeConverter
-    public static Integer intFromDate(@Nullable Date date) {
-      return (date != null) ? date.toEpochDays() : null;
-    }
-
-  }
-
+//
+//    /**
+//     * Converts an {@link Integer} value containing the days since the start of the Unix epoch
+//     * (1970-01-01) to an instance of {@link Date}, and returns the latter. Both of these are
+//     * interpreted as local dates, with no reference to time zone.
+//     *
+//     * @param days local date as a number of days since the start of the Unix epoch.
+//     * @return local date as a {@link Date} instance.
+//     */
+//    @Nullable
+//    @TypeConverter
+//    public static Date dateFromInt(@Nullable Integer days) {
+//      return (days != null) ? Date.fromEpochDays(days) : null;
+//    }
+//
+//    /**
+//     * Converts a {@link Date} local date value to a number of days since the start of the Unix
+//     * epoch (1970-01-01), and returns the latter. Both of these are interpreted as local dates,
+//     * with no reference to time zone.
+//     *
+//     * @param date local date as a {@link Date} instance.
+//     * @return local date as a number of days since the start of the Unix epoch.
+//     */
+//    @Nullable
+//    @TypeConverter
+//    public static Integer intFromDate(@Nullable Date date) {
+//      return (date != null) ? date.toEpochDays() : null;
+//    }
+//
+}
 }

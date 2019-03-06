@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.nasaapod.model.dao;
+package deepdive.cnm.edu.linkorganizer.dao;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
@@ -13,15 +13,12 @@ import java.util.List;
 public interface LinkDao {
 
   @Insert
-  List<Link> insert(Link... links);
+  List<Long> insert(Link... links);
 
-  @Query("SELECT * FROM Category WHERE category_id = :link_id")
+  @Query("SELECT * FROM Link WHERE link_id = :link_id")
   Link getLinkById(Long link_id);
 
-  @Update
-  List<Link> findAll();
-
   @Delete
-  int delete(List... lists);
+  int delete(Link... links);
 
 }
