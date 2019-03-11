@@ -3,6 +3,8 @@ package deepdive.cnm.edu.linkorganizer;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -13,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
@@ -29,7 +32,7 @@ public class MainActivity extends AppCompatActivity
     fab.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+        Snackbar.make(view, "Main Menu", Snackbar.LENGTH_LONG)
             .setAction("Action", null).show();
       }
     });
@@ -42,6 +45,13 @@ public class MainActivity extends AppCompatActivity
 
     NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
     navigationView.setNavigationItemSelectedListener(this);
+
+    SignInFragment fragment = new SignInFragment();
+    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+    transaction.replace(R.id.fragment_container, fragment);
+    transaction.commit();
+
+
   }
 
   @Override
@@ -82,8 +92,12 @@ public class MainActivity extends AppCompatActivity
     // Handle navigation view item clicks here.
     int id = item.getItemId();
 
-    if (id == R.id.nav_camera) {
-      // Handle the camera action
+    if (id == R.id.list_select) {
+      LinkFragment fragment = new LinkFragment();
+      FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+      transaction.replace(R.id.fragment_container, fragment);
+      transaction.commit();
+
     } else if (id == R.id.nav_gallery) {
 
       Log.d("Testing Log", "Gallery item selected");
@@ -100,4 +114,8 @@ public class MainActivity extends AppCompatActivity
     drawer.closeDrawer(GravityCompat.START);
     return true;
   }
+
+
+
+
 }

@@ -9,4 +9,10 @@
   <string name="list_text">Select a List</string>
   <string name="delete_list">Delete A List</string>
   <string name="exit_string">Exit</string>
+
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="user_sign_in">User sign in</string>
+  <string name="delete_text">Delete</string>
+  <string name="edit_text">Edit</string>
 </resources>
