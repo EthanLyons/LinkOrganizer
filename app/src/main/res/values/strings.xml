@@ -14,5 +14,8 @@
   <string name="hello_blank_fragment">Hello blank fragment</string>
   <string name="user_sign_in">User sign in</string>
   <string name="delete_text">Delete</string>
-  <string name="edit_text">Edit</string>
+  <string name="save_text">Save Link</string>
+  <string name="copy_in_a_link">Copy in a link</string>
+  <string name="add_a_tag">Add a tag</string>
+  <string name="cancel_button">Cancel</string>
 </resources>
