@@ -5,6 +5,9 @@
 
   <group android:checkableBehavior="single">
     <item
+      android:id="menubutton"
+      android:icon=menu
+    <item
       android:id="@+id/list_select"
       android:icon="@drawable/list"
       android:title="@string/list_text"/>

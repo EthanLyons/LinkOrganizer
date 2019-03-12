@@ -1,4 +1,4 @@
-package deepdive.cnm.edu.linkorganizer;
+package deepdive.cnm.edu.linkorganizer.service;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
@@ -6,17 +6,17 @@ import android.arch.persistence.room.RoomDatabase;
 import android.arch.persistence.room.TypeConverter;
 import android.arch.persistence.room.TypeConverters;
 import android.support.annotation.Nullable;
+import deepdive.cnm.edu.linkorganizer.LinkOrganizerApplication;
 import deepdive.cnm.edu.linkorganizer.dao.LinkDao;
 import deepdive.cnm.edu.linkorganizer.dao.UserDao;
 import deepdive.cnm.edu.linkorganizer.entity.Category;
 import deepdive.cnm.edu.linkorganizer.entity.Link;
 import deepdive.cnm.edu.linkorganizer.entity.LinkCategory;
 import deepdive.cnm.edu.linkorganizer.entity.User;
-import deepdive.cnm.edu.linkorganizer.LinkOrganizerDB.Converters;
+import deepdive.cnm.edu.linkorganizer.service.LinkOrganizerDB.Converters;
 import deepdive.cnm.edu.linkorganizer.dao.CategoryDao;
 import deepdive.cnm.edu.linkorganizer.dao.LinkCategoryDao;
 import java.util.Calendar;
-import java.util.Date;
 
 /**
  * Defines the local database as a collection of its entities and converters, with the singleton

@@ -5,7 +5,7 @@
   android:layout_height="match_parent"
   android:background="#5bb79c"
   xmlns:app="http://schemas.android.com/apk/res-auto"
-  tools:context=".LinkFragment">
+  tools:context=".controller.LinkFragment">
 
   <EditText
     android:id="@+id/link_url"
