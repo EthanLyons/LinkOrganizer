@@ -103,10 +103,12 @@ public class MainActivity extends AppCompatActivity
       transaction.replace(R.id.fragment_container, fragment);
       transaction.commit();
 
-    } else if (id == R.id.nav_gallery) {
+    } else if (id == R.id.home_button) {
 
-      Log.d("Testing Log", "Gallery item selected");
-
+      SignInFragment fragment = new SignInFragment();
+      FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+      transaction.replace(R.id.fragment_container, fragment);
+      transaction.commit();
     } else if (id == R.id.nav_manage) {
 
     } else if (id == R.id.nav_share) {
