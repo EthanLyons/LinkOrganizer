@@ -19,6 +19,7 @@ public class Link {
   private long userId;
   private String url;
   private String descriptor;
+  private String timestamp;
 
 
 
@@ -42,5 +43,6 @@ public class Link {
     this.descriptor = descriptor;
   }
 
-
+  public String getTimestamp() { return timestamp;}
+  public void setTimestamp(String timestamp) { this.timestamp = timestamp; }
 }

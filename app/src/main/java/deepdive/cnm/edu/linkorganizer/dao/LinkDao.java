@@ -18,6 +18,9 @@ public interface LinkDao {
   @Query("SELECT * FROM Link WHERE link_id = :link_id")
   Link getLinkById(Long link_id);
 
+  @Query("SELECT * FROM Link")
+  List<Link> getAllLinks();
+
   @Delete
   int delete(Link... links);
 
