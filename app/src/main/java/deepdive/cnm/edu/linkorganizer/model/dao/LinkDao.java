@@ -1,11 +1,10 @@
-package deepdive.cnm.edu.linkorganizer.dao;
+package deepdive.cnm.edu.linkorganizer.model.dao;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
-import android.arch.persistence.room.Update;
-import deepdive.cnm.edu.linkorganizer.entity.Link;
+import deepdive.cnm.edu.linkorganizer.model.entity.Link;
 
 import java.util.List;
 

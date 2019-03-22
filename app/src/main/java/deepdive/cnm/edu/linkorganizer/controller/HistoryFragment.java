@@ -8,14 +8,13 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ListView;
 import deepdive.cnm.edu.linkorganizer.R;
-import deepdive.cnm.edu.linkorganizer.entity.Link;
-import deepdive.cnm.edu.linkorganizer.service.LinkOrganizerDB;
+import deepdive.cnm.edu.linkorganizer.model.entity.Link;
+import deepdive.cnm.edu.linkorganizer.model.LinkOrganizerDB;
 import deepdive.cnm.edu.linkorganizer.view.HistoryAdapter;
 import edu.cnm.deepdive.android.BaseFluentAsyncTask;
 import java.util.ArrayList;

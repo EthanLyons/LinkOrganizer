@@ -5,8 +5,8 @@
 //import android.arch.persistence.room.Room;
 //import android.content.Context;
 //import android.support.test.InstrumentationRegistry;
-//import deepdive.cnm.edu.linkorganizer.dao.LinkDao;
-//import deepdive.cnm.edu.linkorganizer.entity.Link;
+//import deepdive.cnm.edu.linkorganizer.model.dao.LinkDao;
+//import deepdive.cnm.edu.linkorganizer.model.entity.Link;
 //import java.util.Date;
 //import org.junit.After;
 //import org.junit.Before;

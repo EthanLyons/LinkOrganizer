@@ -16,10 +16,6 @@
       android:id="@+id/nav_gallery"
       android:icon="@drawable/ic_list"
       android:title="@string/delete_list"/>
-    <item
-      android:id="@+id/nav_manage"
-      android:icon="@drawable/ic_menu_manage"
-      android:title="@string/exit_string"/>
   </group>
 
   <item android:title="Share">

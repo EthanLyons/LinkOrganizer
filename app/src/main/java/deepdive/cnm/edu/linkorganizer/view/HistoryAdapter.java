@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 
 import android.widget.TextView;
 import deepdive.cnm.edu.linkorganizer.R;
-import deepdive.cnm.edu.linkorganizer.entity.Link;
+import deepdive.cnm.edu.linkorganizer.model.entity.Link;
 import java.util.List;
 
 

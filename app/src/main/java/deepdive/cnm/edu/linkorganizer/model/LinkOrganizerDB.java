@@ -1,4 +1,4 @@
-package deepdive.cnm.edu.linkorganizer.service;
+package deepdive.cnm.edu.linkorganizer.model;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
@@ -7,15 +7,15 @@ import android.arch.persistence.room.TypeConverter;
 import android.arch.persistence.room.TypeConverters;
 import android.support.annotation.Nullable;
 import deepdive.cnm.edu.linkorganizer.LinkOrganizerApplication;
-import deepdive.cnm.edu.linkorganizer.dao.LinkDao;
-import deepdive.cnm.edu.linkorganizer.dao.UserDao;
-import deepdive.cnm.edu.linkorganizer.entity.Category;
-import deepdive.cnm.edu.linkorganizer.entity.Link;
-import deepdive.cnm.edu.linkorganizer.entity.LinkCategory;
-import deepdive.cnm.edu.linkorganizer.entity.User;
-import deepdive.cnm.edu.linkorganizer.service.LinkOrganizerDB.Converters;
-import deepdive.cnm.edu.linkorganizer.dao.CategoryDao;
-import deepdive.cnm.edu.linkorganizer.dao.LinkCategoryDao;
+import deepdive.cnm.edu.linkorganizer.model.dao.LinkDao;
+import deepdive.cnm.edu.linkorganizer.model.dao.UserDao;
+import deepdive.cnm.edu.linkorganizer.model.entity.Category;
+import deepdive.cnm.edu.linkorganizer.model.entity.Link;
+import deepdive.cnm.edu.linkorganizer.model.entity.LinkCategory;
+import deepdive.cnm.edu.linkorganizer.model.entity.User;
+import deepdive.cnm.edu.linkorganizer.model.LinkOrganizerDB.Converters;
+import deepdive.cnm.edu.linkorganizer.model.dao.CategoryDao;
+import deepdive.cnm.edu.linkorganizer.model.dao.LinkCategoryDao;
 import java.util.Calendar;
 
 /**

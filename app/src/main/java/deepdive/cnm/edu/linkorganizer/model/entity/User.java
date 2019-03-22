@@ -1,4 +1,4 @@
-package deepdive.cnm.edu.linkorganizer.entity;
+package deepdive.cnm.edu.linkorganizer.model.entity;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;

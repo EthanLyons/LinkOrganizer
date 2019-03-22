@@ -1,10 +1,8 @@
-package deepdive.cnm.edu.linkorganizer.entity;
+package deepdive.cnm.edu.linkorganizer.model.entity;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
-import android.net.UrlQuerySanitizer;
-import android.support.annotation.NonNull;
 
 @Entity()
 
