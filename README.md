@@ -31,5 +31,5 @@ Add sharing features, Link descriptors, and possibly previews of the links being
 
 ## Links to the wireframes and user stories for your app.
 
-[ERD](LinkOrganizer/Blank Diagram.pdf)
-[UserStories](LinkOrganizer/USERSTORIES.md)
+[ERD](Blank%20Diagram.pdf)
+[UserStories](USERSTORIES.md)
