@@ -4,6 +4,10 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+/**
+ * This Category entity used in many to many relationship for tagging links.
+ * Narrows down field of the kind of specific Link.
+ */
 @Entity()
 
 public class Category {

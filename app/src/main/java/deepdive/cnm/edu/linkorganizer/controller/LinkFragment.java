@@ -33,6 +33,7 @@ public class LinkFragment extends Fragment {
     // Required empty public constructor
   }
 
+
   public static Fragment newInstance(long id) {
 
     LinkFragment linkFragment = new LinkFragment();

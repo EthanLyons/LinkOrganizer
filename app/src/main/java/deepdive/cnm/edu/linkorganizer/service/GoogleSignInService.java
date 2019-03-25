@@ -6,7 +6,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import deepdive.cnm.edu.linkorganizer.LinkOrganizerApplication;
 
-
+/**
+ *
+ */
 public class GoogleSignInService {
 
   private GoogleSignInClient client;
@@ -20,10 +22,19 @@ public class GoogleSignInService {
     client = GoogleSignIn.getClient(LinkOrganizerApplication.getInstance(), options);
   }
 
+  /**
+   * Returns the singleton instance of <code>GoogleSignInService</code> for use as needed for signing in or out in the app.
+   *
+   * @return The singleton instance of this class
+   */
   public static GoogleSignInService getInstance() {
     return InstanceHolder.INSTANCE;
   }
 
+  /**
+   * Return
+   * @return Gets google service client.
+   */
   public GoogleSignInClient getClient() {
     return client;
   }
