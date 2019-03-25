@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity
       default:
         handled = super.onOptionsItemSelected(item);
         int id = item.getItemId();
-      return handled;
+        return handled;
     }
 
     return super.onOptionsItemSelected(item);
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity
         transaction.replace(R.id.fragment_container, fragment);
         transaction.commit();
         break;
-      case R.id.home_button :
+      case R.id.home_button:
         fragment = new HistoryFragment();
         transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment_container, fragment);
@@ -118,7 +118,10 @@ public class MainActivity extends AppCompatActivity
     return true;
   }
 
-  private void signOut()  {
+  /**
+   * Sign out call to back out to main screen.
+   */
+  private void signOut() {
     GoogleSignInService.getInstance().getClient()
         .signOut()
         .addOnCompleteListener(this, (task) -> {

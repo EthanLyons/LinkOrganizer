@@ -48,7 +48,8 @@ public abstract class LinkOrganizerDB extends RoomDatabase {
   private static class InstanceHolder {
 
     private static final LinkOrganizerDB INSTANCE = Room.databaseBuilder(
-        LinkOrganizerApplication.getInstance().getApplicationContext(), LinkOrganizerDB.class, DB_NAME)
+        LinkOrganizerApplication.getInstance().getApplicationContext(), LinkOrganizerDB.class,
+        DB_NAME)
         .build();
 
   }
@@ -82,6 +83,9 @@ public abstract class LinkOrganizerDB extends RoomDatabase {
     public static Long longFromCalendar(@Nullable Calendar calendar) {
       return (calendar != null) ? calendar.getTimeInMillis() : null;
     }
+
+    // Below is date code that I've set aside for use for another time.
+
 //
 //    /**
 //     * Converts an {@link Integer} value containing the days since the start of the Unix epoch
@@ -111,5 +115,5 @@ public abstract class LinkOrganizerDB extends RoomDatabase {
 //      return (date != null) ? date.toEpochDays() : null;
 //    }
 //
-}
+  }
 }

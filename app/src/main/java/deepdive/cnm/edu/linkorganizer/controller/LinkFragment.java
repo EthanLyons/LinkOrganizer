@@ -33,7 +33,12 @@ public class LinkFragment extends Fragment {
     // Required empty public constructor
   }
 
-
+  /**
+   * Creates new instance of a link and bundles it.
+   *
+   * @param id identification parameter of a specific instance of a <code>Link</code>
+   * @return returns bundled instance of ID
+   */
   public static Fragment newInstance(long id) {
 
     LinkFragment linkFragment = new LinkFragment();
@@ -55,7 +60,7 @@ public class LinkFragment extends Fragment {
     saveLink = view.findViewById(R.id.save_link);
     saveLink.setOnClickListener((v) -> saveLink());
     if (getArguments() != null && getArguments().containsKey("id")) {
-      new AsyncTask<Long, Void, Link>(){
+      new AsyncTask<Long, Void, Link>() {
         @Override
         protected Link doInBackground(Long... longs) {
           return LinkOrganizerDB.getInstance().getLinkDao().getLinkById(longs[0]);
@@ -69,7 +74,7 @@ public class LinkFragment extends Fragment {
         }
 
       }
-      .execute(getArguments().getLong("id"));
+          .execute(getArguments().getLong("id"));
     }
     return view;
   }
@@ -86,21 +91,19 @@ public class LinkFragment extends Fragment {
         @Override
         protected Void doInBackground(Link... links) {
           LinkOrganizerDB.getInstance().getLinkDao().update(links[0]);
-        return null;
+          return null;
         }
 
       }
-      .execute(link);
-    }
-
-    else {
+          .execute(link);
+    } else {
       Link link = new Link();
       link.setUrl(url);
       link.setDescriptor(descriptor);
       new InsertLinkTask().execute(link);
     }
-
   }
+
 
   private static class InsertLinkTask extends AsyncTask<Link, Void, List<Long>> {
 

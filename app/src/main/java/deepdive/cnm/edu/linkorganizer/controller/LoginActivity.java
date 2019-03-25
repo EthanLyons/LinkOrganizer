@@ -51,10 +51,18 @@ public class LoginActivity extends AppCompatActivity {
     }
   }
 
+  /**
+   * Sign in method similar to signOut. Calls sign in.
+   */
   private void signIn() {
-    Intent intent  = GoogleSignInService.getInstance().getClient().getSignInIntent();
+    Intent intent = GoogleSignInService.getInstance().getClient().getSignInIntent();
     startActivityForResult(intent, LOGIN_REQUEST_CODE);
+
   }
+
+  /**
+   * Switches to main fragment (I think? Don't forget to ask about this one)
+   */
 
   private void switchToMain() {
     Intent intent = new Intent(this, MainActivity.class);
