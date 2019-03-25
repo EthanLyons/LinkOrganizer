@@ -6,8 +6,13 @@
     android:title="Delete"
     />
   <item
+    android:id="@+id/edit_title"
+    android:title="Edit"
+/>
+  <item
     android:id="@+id/share_title"
     android:title="Share"
     />
+
 
 </menu>

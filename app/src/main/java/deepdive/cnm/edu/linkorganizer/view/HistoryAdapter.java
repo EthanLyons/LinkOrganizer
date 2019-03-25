@@ -32,9 +32,11 @@ public class HistoryAdapter extends ArrayAdapter<Link> {
    Link link = getItem(position);
    View view = (convertView != null) ? convertView :
        LayoutInflater.from(getContext()).inflate(R.layout.link_list_item, parent, false);
-    ((TextView) view).setText(link.getUrl());
+    ((TextView) view.findViewById(R.id.link_url)).setText(link.getUrl());
+    ((TextView) view.findViewById(R.id.descriptor_url)).setText(link.getDescriptor());
     return view;
   }
+
 
 
 }

@@ -4,6 +4,7 @@ import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+import android.arch.persistence.room.Update;
 import deepdive.cnm.edu.linkorganizer.model.entity.Link;
 
 import java.util.List;
@@ -19,6 +20,9 @@ public interface LinkDao {
 
   @Query("SELECT * FROM Link")
   List<Link> getAllLinks();
+
+  @Update
+  void update(Link link);
 
   @Delete
   int delete(Link... links);

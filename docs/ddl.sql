@@ -1,3 +1,5 @@
+```sql
+
 CREATE TABLE IF NOT EXISTS `LinkCategory` (
   `category_id` INTEGER NOT NULL,
   `link_id` INTEGER NOT NULL,
@@ -27,3 +29,4 @@ CREATE TABLE IF NOT EXISTS Link (
   AUTOINCREMENT NOT NULL, `user_id`
   INTEGER NOT NULL, `url` TEXT, `descriptor` TEXT, `timestamp` TEXT
 );
+```

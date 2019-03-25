@@ -1,3 +1,7 @@
+[DDL](docs/ddl.md)
+
+
+
 # LinkOrganizer
 # Ethan Jacob Lyons
 Last updated 3/21/2019
@@ -33,3 +37,7 @@ Add sharing features, Link descriptors, and possibly previews of the links being
 
 [ERD](LinkOrganizer/Blank Diagram.pdf)
 [UserStories](LinkOrganizer/USERSTORIES.md)
+
+
+
+For more details on the project click this link [Javadoc](docs/api/)

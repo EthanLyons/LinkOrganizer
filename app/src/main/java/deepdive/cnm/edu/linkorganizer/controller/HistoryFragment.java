@@ -72,6 +72,11 @@ public class HistoryFragment extends Fragment {
         //TODO Create and execute a task to delete a Link from the database.
 //        LinkOrganizerDB.getInstance().getLinkDao().delete(link)
         break;
+      case R.id.edit_title:
+
+        getFragmentManager().beginTransaction().replace(R.id.fragment_container, LinkFragment.newInstance(link.getId())).commit();
+        LinkOrganizerDB.getInstance();
+        break;
       case R.id.share_title:
         //TODO Create an intent for sharing
         break;
