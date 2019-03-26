@@ -3,6 +3,6 @@
   <color name="colorPrimary">#3F51B5</color>
   <color name="colorPrimaryDark">#303F9F</color>
   <color name="colorAccent">#FF4081</color>
-  <color name="linkText">#52bdce</color>
+  <color name="linkText">#00171b</color>
   <color name="HomeMenuButton">#00bfff</color>
 </resources>
