@@ -56,7 +56,6 @@ public class LinkFragment extends Fragment {
     View view = inflater.inflate(R.layout.fragment_link, container, false);
     linkUrl = view.findViewById(R.id.link_url);
     descriptorUrl = view.findViewById(R.id.descriptor_url);
-    deleteButton = view.findViewById(R.id.cancel_button);
     saveLink = view.findViewById(R.id.save_link);
     saveLink.setOnClickListener((v) -> saveLink());
     if (getArguments() != null && getArguments().containsKey("id")) {

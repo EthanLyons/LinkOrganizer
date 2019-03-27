@@ -16,6 +16,8 @@ import deepdive.cnm.edu.linkorganizer.model.entity.User;
 import deepdive.cnm.edu.linkorganizer.model.LinkOrganizerDB.Converters;
 import deepdive.cnm.edu.linkorganizer.model.dao.CategoryDao;
 import deepdive.cnm.edu.linkorganizer.model.dao.LinkCategoryDao;
+import edu.cnm.deepdive.android.BaseFluentAsyncTask;
+import edu.cnm.deepdive.android.BaseFluentAsyncTask.TaskException;
 import java.util.Calendar;
 
 /**
@@ -69,6 +71,19 @@ public abstract class LinkOrganizerDB extends RoomDatabase {
         return calendar;
       }
       return null;
+    }
+
+
+
+    public static class DeleteLinkTask extends BaseFluentAsyncTask<Link, Void, Void, Void> {
+
+      @Nullable
+      @Override
+      protected Void perform(Link... links) throws TaskException {
+        LinkOrganizerDB.getInstance().getLinkDao().delete(links);
+        return null;
+      }
+
     }
 
     /**

@@ -12,7 +12,9 @@ import android.view.ViewGroup;
 
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ListView;
+import android.widget.TextView;
 import deepdive.cnm.edu.linkorganizer.R;
+import deepdive.cnm.edu.linkorganizer.model.LinkOrganizerDB.Converters.DeleteLinkTask;
 import deepdive.cnm.edu.linkorganizer.model.entity.Link;
 import deepdive.cnm.edu.linkorganizer.model.LinkOrganizerDB;
 import deepdive.cnm.edu.linkorganizer.view.HistoryAdapter;
@@ -29,6 +31,8 @@ public class HistoryFragment extends Fragment {
 
   private List<Link> links;
 
+  private HistoryAdapter adapter;
+
   public HistoryFragment() {
     // Required empty public constructor
   }
@@ -41,7 +45,7 @@ public class HistoryFragment extends Fragment {
     View view = inflater.inflate(R.layout.fragment_history, container, false);
     linkList = view.findViewById(R.id.link_list);
     links = new ArrayList<>();
-    HistoryAdapter adapter = new HistoryAdapter(getContext(), R.layout.link_list_item, links);
+    adapter = new HistoryAdapter(getContext(), R.layout.link_list_item, links);
     linkList.setAdapter(adapter);
     registerForContextMenu(linkList);
     new SelectAllLinkTask()
@@ -61,6 +65,8 @@ public class HistoryFragment extends Fragment {
     getActivity().getMenuInflater().inflate(R.menu.context_option, menu);
   }
 
+
+
   @Override
   public boolean onContextItemSelected(MenuItem item) {
     boolean handled = true;
@@ -69,8 +75,12 @@ public class HistoryFragment extends Fragment {
     Link link = links.get(position);
     switch (item.getItemId()) {
       case R.id.delete_title:
-        //TODO Create and execute a task to delete a Link from the database.
-//        LinkOrganizerDB.getInstance().getLinkDao().delete(link)
+        new DeleteLinkTask()
+            .setSuccessListener((v) -> {
+              links.remove(position);
+              adapter.notifyDataSetChanged();
+            })
+            .execute(link);
         break;
       case R.id.edit_title:
 

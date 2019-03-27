@@ -28,16 +28,14 @@ public class HistoryAdapter extends ArrayAdapter<Link> {
   @NonNull
   @Override
   public View getView(int position, @Nullable View convertView,
-     @NonNull ViewGroup parent) {
-   Link link = getItem(position);
-   View view = (convertView != null) ? convertView :
-       LayoutInflater.from(getContext()).inflate(R.layout.link_list_item, parent, false);
+      @NonNull ViewGroup parent) {
+    Link link = getItem(position);
+    View view = (convertView != null) ? convertView :
+        LayoutInflater.from(getContext()).inflate(R.layout.link_list_item, parent, false);
     ((TextView) view.findViewById(R.id.link_url)).setText(link.getUrl());
     ((TextView) view.findViewById(R.id.descriptor_url)).setText(link.getDescriptor());
     return view;
   }
-
-
 
 }
 
