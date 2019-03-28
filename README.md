@@ -33,9 +33,10 @@ Add sharing features, Link descriptors, and possibly previews of the links being
 
 ## Links to the wireframes and user stories for your app.
 
-[ERD](Blank%20Diagram.pdf)
-[UserStories](USERSTORIES.md)
+Entity Relationship Diagram [ERD](Blank%20Diagram.pdf)
 
+User Stories [UserStories](USERSTORIES.md)
 
+License [Licence](LICENSE.md)
 
 For more details on the project click this link [Javadoc](docs/api/)
