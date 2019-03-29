@@ -16,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import deepdive.cnm.edu.linkorganizer.R;
 import deepdive.cnm.edu.linkorganizer.service.GoogleSignInService;
 
@@ -37,6 +38,9 @@ public class MainActivity extends AppCompatActivity
 
     NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
     navigationView.setNavigationItemSelectedListener(this);
+
+    TextView userEmail = navigationView.getHeaderView(0).findViewById(R.id.user_email);
+    userEmail.setText(GoogleSignInService.getInstance().getAccount().getEmail());
 
     HistoryFragment fragment = new HistoryFragment();
     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
