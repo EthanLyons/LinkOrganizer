@@ -11,10 +11,16 @@ Last updated 3/21/2019
 Personal Project Repository for a Mozilla Firefox Pocket Esque link collection program. I chose this project to fill the need for a 
 program that can store links in a more proactive, collective, and accesible way.
 
-The app I would say is around 60 percent complete at this moment. I can currently save links to the local database model, google sign in and out functions perfectly, fragments and activities are functioning well. Need to build a link descriptor function and history 
-fragment.
+The app I would say is around 60 percent complete at this moment. I can currently save links to the local database model, google sign in and out functions perfectly, fragments and activities are functioning well. 
+
+I want to be able to fix a bug with long press where it takes me to google and context menu popup at the same time.
+I want to add sharing functionality
 
 ## A list of Android API versions and hardware
+
+Tested on Nexus 5X Api 24
+Min API 21
+
 
 ## A list of the 3rd-party libraries used
 
